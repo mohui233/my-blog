@@ -77,16 +77,17 @@
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--fork : 如果没有该项配置，不使用devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-    <!--  @author 13
-          @qq交流群 796794009
-          @email 2449207463@qq.com
-          @link 
-    -->
 </project>
